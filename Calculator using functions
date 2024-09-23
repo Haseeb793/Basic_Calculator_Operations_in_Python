@@ -1,0 +1,68 @@
+# Function to add two numbers
+def add(a, b):
+    return a + b
+
+# Function to subtract two numbers
+def subtract(a, b):
+    return a - b
+
+# Function to multiply two numbers
+def multiply(a, b):
+    return a * b
+
+# Function to divide two numbers, with division by zero validation
+def divide(a, b):
+    if b == 0:
+        return "Error! Division by zero."
+    else:
+        return a / b
+
+# Function to find modulus
+def modulus(a, b):
+    return a % b
+
+# Function to find power
+def power(a, b):
+    return a ** b
+
+# Function to take input from the user and perform the selected operation
+def calculator():
+    print("Welcome to the calculator")
+    print("Select an operation:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Power")
+    
+    # Take user input for operation
+    operation = input("Enter the number corresponding to the operation (1-6): ")
+
+    if operation in ['1', '2', '3', '4', '5', '6']:
+        # Take user input for numbers
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input! Please enter numeric values.")
+            return
+
+        # Perform the selected operation
+        if operation == '1':
+            print(f"Result: {num1} + {num2} = {add(num1, num2)}")
+        elif operation == '2':
+            print(f"Result: {num1} - {num2} = {subtract(num1, num2)}")
+        elif operation == '3':
+            print(f"Result: {num1} * {num2} = {multiply(num1, num2)}")
+        elif operation == '4':
+            print(f"Result: {num1} / {num2} = {divide(num1, num2)}")
+        elif operation == '5':
+            print(f"Result: {num1} % {num2} = {modulus(num1, num2)}")
+        elif operation == '6':
+            print(f"Result: {num1} ^ {num2} = {power(num1, num2)}")
+    else:
+        print("Invalid operation selection! Please choose a number between 1 and 6.")
+
+# Run the calculator function
+calculator()
